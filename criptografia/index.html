@@ -1,88 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="key.png">
     <title>Criptografia</title>
+
 </head>
 
 <body>
-    <h1>Criptografia</h1>
-    <label for="inputText">Texto:</label>
-    <input type="text" id="inputText">
-    <br>
-    <input type="radio" id="encrypt" name="action" value="encrypt" checked>
-    <label for="encrypt">Criptografar</label>
-    <input type="radio" id="decrypt" name="action" value="decrypt">
-    <label for="decrypt">Descriptografar</label>
-    <br>
-    <button onclick="processText()">Processar</button>
-    <button onclick="copyToClipboard()">Copiar</button>
-    <h2>Resultado:</h2>
-    <p id="outputText"></p>
-    <script>
-        function processText() {
-            const inputText = document.getElementById('inputText').value;
-            const action = document.querySelector('input[name="action"]:checked').value;
-            let outputText = '';
+    <header class="header-container">
+        <h1 class="main-title">Criptografia</h1>
+    </header>
+    <main>
+        <section class="section-container ">
+            <div class="flex-container">
+                <div>
+                    <p class="p1">apenas minúsculas sem acento</p>
+                </div>
+                <div>
+                    <textarea oninput="this.value = this.value.replace(/[^a-z ]/g, '')" cols="35" rows="10"
+                        placeholder="Digite aqui a mensagem" autofocus="true" class="aencriptar" required></textarea>
+                </div>
 
-            if (action === 'encrypt') {
-                outputText = encrypt(inputText);
-            } else {
-                outputText = decrypt(inputText);
-            }
 
-            document.getElementById('outputText').innerHTML = outputText;
-        }
 
-        function encrypt(text) {
-            const map = {
-                'e': 'enter',
-                'i': 'imes',
-                'a': 'ai',
-                'o': 'ober',
-                'u': 'ufat'
-            };
-            let encrypted = '';
+                <div>
+                    <input onclick="encriptar()" type="button" value="Encriptar" class="buttons" id="btn1">
+                    <input onclick="decriptar()" type="button" value="Decriptar" class="buttons" id="btn2">
+                </div>
 
-            for (let char of text) {
-                if (map[char]) {
-                    encrypted += map[char];
-                } else {
-                    encrypted += char;
-                }
-            }
+            </div>
+        </section>
 
-            return encrypted;
-        }
+        <section class="section-container ">
+            <div class="flex-container">
+                <div>
+                    <textarea cols="35" rows="10" placeholder="Aguardando mensagem" class="adecriptar"
+                        readonly></textarea>
+                </div>
+                <div>
+                    <input onclick="copiar()" type="button" value="Copiar" class="buttons" id="btn3">
+                </div>
 
-        function decrypt(text) {
-            const map = {
-                'enter': 'e',
-                'imes': 'i',
-                'ai': 'a',
-                'ober': 'o',
-                'ufat': 'u'
-            };
-            let decrypted = text;
-
-            for (let key in map) {
-                decrypted = decrypted.split(key).join(map[key]);
-            }
-
-            return decrypted;
-        }
-
-        function copyToClipboard() {
-            const el = document.createElement('textarea');
-            el.value = document.getElementById('outputText').innerText;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            alert('Texto copiado para a área de transferência!');
-        }
-    </script>
+            </div>
+        </section>
+    </main>
+    <!--footer class="footer-container">
+        <div class="developer">&copy; 2023 R. Martins</div>
+    </footer-->
+    <script src="script.js"></script>
 </body>
 
 </html>
