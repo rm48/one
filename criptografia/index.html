@@ -5,15 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="key.png">
     <title>Criptografia</title>
-
 </head>
 
 <body>
@@ -27,15 +24,12 @@
                     <p class="p1">apenas minúsculas sem acento</p>
                 </div>
                 <div>
-                    <textarea  cols="35" rows="10"
-                        placeholder="Digite aqui a mensagem" autofocus="true" class="aencriptar" required></textarea>
+                    <textarea cols="60" rows="20" placeholder="Digite aqui a mensagem" autofocus="true"
+                        class="aencriptar" required></textarea>
                 </div>
-
-
-
                 <div>
-                    <input onclick="encriptar()" type="button" value="Encriptar" class="buttons" id="btn1">
-                    <input onclick="decriptar()" type="button" value="Decriptar" class="buttons" id="btn2">
+                    <input onclick="encriptar()" type="button" value="Encriptar" class="buttons" id="btEnc">
+                    <input onclick="decriptar()" type="button" value="Decriptar" class="buttons" id="btDec">
                 </div>
 
             </div>
@@ -44,19 +38,16 @@
         <section class="section-container ">
             <div class="flex-container">
                 <div>
-                    <textarea cols="35" rows="10" placeholder="Aguardando mensagem" class="adecriptar"
+                    <textarea cols="60" rows="20" placeholder="Aguardando mensagem" class="adecriptar"
                         readonly></textarea>
                 </div>
                 <div>
-                    <input onclick="copiar()" type="button" value="Copiar" class="buttons" id="btn3">
+                    <input onclick="copiar()" type="button" value="Copiar" class="buttons" id="btCop">
                 </div>
 
             </div>
         </section>
     </main>
-    <!--footer class="footer-container">
-        <div class="developer">&copy; 2023 R. Martins</div>
-    </footer-->
     <script src="script.js"></script>
 </body>
 

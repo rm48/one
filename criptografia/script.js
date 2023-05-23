@@ -1,22 +1,22 @@
 
 
 function encriptar() {
-  let typingTxt = document.querySelector(".aencriptar").value;
+  let mensagem = document.querySelector(".aencriptar").value;
 
-  if (typingTxt != "") {
-    const encryptingTxt = typingTxt.split(/e/g).join("enter").split(/i/g).join("imes").split(/a/g).join("ai").split(/o/g).join("ober").split(/u/g).join("ufat");
-    document.querySelector(".adecriptar").value = encryptingTxt;
+  if (mensagem != "") {
+    const codigo = mensagem.split(/e/g).join("enter").split(/i/g).join("imes").split(/a/g).join("ai").split(/o/g).join("ober").split(/u/g).join("ufat");
+    document.querySelector(".adecriptar").value = codigo;
     document.querySelector(".aencriptar").value = "";
   }
 };
 
 
 function decriptar() {
-  let pasteTxt = document.querySelector(".aencriptar").value;
+  let copia = document.querySelector(".aencriptar").value;
 
-  if (pasteTxt != "") {
-    const encryptingTxt = pasteTxt.replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a").replace(/ober/g, "o").replace(/ufat/g, "u");
-    document.querySelector(".adecriptar").value = encryptingTxt;
+  if (copia != "") {
+    const codigo = copia.replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a").replace(/ober/g, "o").replace(/ufat/g, "u");
+    document.querySelector(".adecriptar").value = codigo;
     document.querySelector(".aencriptar").value = "";
   }
 };
@@ -24,9 +24,9 @@ function decriptar() {
 
 async function copiar() {
 
-  let outputText = document.querySelector(".adecriptar").value;
-  await navigator.clipboard.writeText(outputText);
+  let saida = document.querySelector(".adecriptar").value;
+  await navigator.clipboard.writeText(saida);
   document.querySelector(".adecriptar").value = "";
-  document.querySelector(".aencriptar").value = outputText;
+  document.querySelector(".aencriptar").value = saida;
 };
 
