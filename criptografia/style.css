@@ -3,6 +3,7 @@ body {
     color:#ffffff;
     background-color: #000000;
     background: url("https://i.pinimg.com/originals/9a/24/5d/9a245d84a1d75078dfb7c2950a1a2d89.jpg");
+	background-size: cover;
 }
 
 .header-container {
@@ -121,7 +122,7 @@ a {
     }   
 }
 
-@media(min-width: 360px) and (max-width: 720px) {
+@media(min-width: 150px) and (max-width: 720px) {
     body {
         background: url("https://m.media-amazon.com/images/I/81i5tiFrQAL.png");
         background-size: cover;
